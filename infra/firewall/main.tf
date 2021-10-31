@@ -1,5 +1,5 @@
 provider "google" {
-  project = "cks-328210"
+  project = ""
   region  = "europe-west3"
   zone    = "europe-west3-c"
 }
