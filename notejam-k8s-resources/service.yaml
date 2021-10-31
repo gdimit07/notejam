@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: notejam
+  name: notejam
+  namespace: default
+spec:
+  ports:
+  - nodePort: 31823
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    run: notejam
+  type: NodePort
