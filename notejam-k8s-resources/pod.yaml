@@ -11,8 +11,13 @@ spec:
     imagePullPolicy: IfNotPresent
     name: notejam
     ports:
-    - containerPort: 8080
+    - name: readiness-port
+      containerPort: 8080
       protocol: TCP
+    readinessProbe:
+      httpGet:
+        path: /signin
+        port: readiness-port
     resources: {}
     terminationMessagePath: /dev/termination-log
     terminationMessagePolicy: File
